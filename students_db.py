@@ -18,9 +18,11 @@ class Student(Base):
     name = Column(Text)
     english_mark = Column(Integer)
      # TODO: Add column for students' mathematics marks
+    mathematics_mark = Column(Integer)
     science_mark = Column(Integer)
     does_homework = Column(Boolean)
     # TODO: Add column for students' stays on task behaviour
+    stays_on_task = Column(Boolean)
     
 
 # This deletes all data in the records.db database, so that we are starting from scratch each time
@@ -37,9 +39,9 @@ jack = Student (
     name = 'Jack',
     english_mark = 90,
     science_mark = 90,
-    # TODO: Add a value for mathematics mark, once you have added that column
+    mathematics_mark = 92,
     does_homework = True,
-    # TODO: Add a value for stays on task behaviour, once you have added that column
+    stays_on_task = True,
 )
 session.add(jack)
 
@@ -48,14 +50,24 @@ dom = Student (
     name = 'Dom',
     english_mark = 80,
     science_mark = 80,
-    # TODO: Add a value for mathematics mark, once you have added that column
+    mathematics_mark = 88,
     does_homework = False,
-    # TODO: Add a value for stays on task behaviour, once you have added that column
+    stays_on_task = False,
 
 )
 session.add(dom)
 
- # TODO: Add code to add another student here
+# Creates a Student object for a student named Jess
+jess = Student (
+    name = 'Jess',
+    english_mark = 95,
+    science_mark = 97,
+    mathematics_mark = 99,
+    does_homework = True,
+    stays_on_task = True,
+
+)
+session.add(jess)
 
 # The changes are committed (saved in the underlying database - records.db)
 session.commit()
