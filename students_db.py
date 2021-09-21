@@ -17,11 +17,9 @@ class Student(Base):
     id = Column(Integer, primary_key=True)
     name = Column(Text)
     english_mark = Column(Integer)
-     # TODO: Add column for students' mathematics marks
     mathematics_mark = Column(Integer)
     science_mark = Column(Integer)
     does_homework = Column(Boolean)
-    # TODO: Add column for students' stays on task behaviour
     stays_on_task = Column(Boolean)
     
 
